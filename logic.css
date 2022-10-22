@@ -1,0 +1,92 @@
+/* Reset to default */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* LAYOUT */
+body {
+  background-color: #000000ec;
+  color: white;
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "main aside"
+  ;
+  grid-template-rows: 1fr 1fr;
+  height: 100vh;
+}
+
+header {
+  grid-area: header;
+  /* background-color: aqua; */
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  /* gap: rem; */
+}
+
+nav {
+  /* background-color: blueviolet; */
+  margin-top: 0.5rem;
+}
+
+nav .title,
+nav p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 25px 0;
+  /* background-color: blueviolet; */
+
+}
+
+.trial {
+  font-size: 50px;
+  /* background-color: orange; */
+}
+
+header .SecretNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0 25px 0;
+  background-color: blueviolet;
+  position: absolute;
+  top: 0;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background: white;
+  font-size: 75px;
+  color: black
+}
+
+div.line {
+  position: absolute;
+  top: 0;
+  bottom: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100vw;
+  height: 5px;
+  background: white;
+  font-size: 75px;
+
+}
+
+
+main {
+  grid-area: main;
+  background-color: aquamarine;
+}
+
+aside {
+  grid-area: aside;
+  background-color: palegreen;
+}
