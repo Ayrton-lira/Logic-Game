@@ -1,6 +1,6 @@
-// tentar por restrict
+'use strict'
 
-secretNumber = Math.trunc(Math.random() * 20 + 1)
+let secretNumber = Math.trunc(Math.random() * 20 + 1)
 
 document.querySelector('.buttonCheck').addEventListener('click', function () {
   // let message = document.querySelector('.motivation').textContent
@@ -13,8 +13,10 @@ document.querySelector('.buttonCheck').addEventListener('click', function () {
       document.querySelector('.motivation').textContent = 'Correct Answer !!!! '
       document.querySelector('.SecretNumber').textContent = secretNumber
       document.querySelector('body').style.backgroundColor = '#adff2f'
-      highscore = score
-      document.querySelector('.highscore').textContent = highscore
+      if (score > highscore) {
+        highscore = score
+        document.querySelector('.highscore').textContent = highscore
+      }
     } else if (check < secretNumber) {
       document.querySelector('.motivation').textContent = 'Try a bigger one !! '
       score--
@@ -33,10 +35,12 @@ document.querySelector('.buttonCheck').addEventListener('click', function () {
   // console.log(message)
   // console.log(score)
   // console.log(highscore)
-  console.log(secretNumber)
+  // console.log(secretNumber)
 })
 
 document.querySelector('.buttonAgain').addEventListener('click', function () {
+  let score = Number(document.querySelector('.score').textContent)
+  let highscore = Number(document.querySelector('.highscore').textContent)
   document.querySelector('body').style.backgroundColor = '#000000ec'
   document.querySelector('.score').textContent = 20
   document.querySelector('.motivation').textContent = 'Start guessing'
